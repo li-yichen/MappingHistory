@@ -7,16 +7,19 @@ import csv
 import re
 import string
 
+#list of US states, with order corresponding to the list of US state abbreviations
 US_States = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia",
 	"Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan",
 	"Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina",
 	"North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont",
 	"Virginia","Washington","West Virginia","Wisconsin","Wyoming"]
+#list of US states abbreviations, with order corresponding to the list of US states
 US_States_Abbreviations = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", 
           "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", 
           "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", 
           "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", 
           "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
+#worktype dictionary, see edit instructions in readme
 work_type_dict = {
 	'culture':["museum","Museum","concert halls","Concert Halls","Concert halls","public art","galleries","gallery","sculpture","Sculpture","monument","Monument","memorial","Memorial","mural","painting","art centers"],
 	'government':["civic","Civic","Post office","post office","Post Office","correctional institutions","prison","Prison","public building","Public Building","Public building","fire station","Fire Station","capitol","Capitol","courthouse","Courthouse","government","civic center","federal building","Federal Building","city hall","City Hall","town hall","Town Hall","post office","police stations","Police Stations"],
@@ -33,7 +36,10 @@ work_type_dict = {
 	# "national parks", "street furniture", "public parks", "office buildings", "bungalows", "theme parks","distilleries"
 	}
 
-locations = pd.read_csv("/Users/yichenli/Downloads/ARTHI/sahara-us-full-12-3.csv")
+#please replace with actual file path to input csv file
+#import csv file as locations
+locations = pd.read_csv("FILEPATHTOCSV")
+#converts csv file to python dictionary named locations_dict
 locations_dict = locations.to_dict(orient='records')
 
 # below could be used if computer could process NLTK
@@ -43,23 +49,23 @@ locations_dict = locations.to_dict(orient='records')
 # # # Prepare NER tagger with english model
 # ner_tagger = StanfordNERTagger(model, jar, encoding='utf8')
 
-def get_continuous_chunks(tagged_sent):
-    continuous_chunk = []
-    current_chunk = []
-
-    for token, tag in tagged_sent:
-        if tag != "O":
-            current_chunk.append((token, tag))
-        else:
-            if current_chunk: # if the current chunk is not empty
-                continuous_chunk.append(current_chunk)
-                current_chunk = []
+#def get_continuous_chunks(tagged_sent):
+#    continuous_chunk = []
+#    current_chunk = []
+#
+#    for token, tag in tagged_sent:
+#        if tag != "O":
+#            current_chunk.append((token, tag))
+#        else:
+#            if current_chunk: # if the current chunk is not empty
+#                continuous_chunk.append(current_chunk)
+#                current_chunk = []
     # Flush the final current_chunk into the continuous_chunk, if any.
-    if current_chunk:
-        continuous_chunk.append(current_chunk)
-    return continuous_chunk
+#    if current_chunk:
+#        continuous_chunk.append(current_chunk)
+#    return continuous_chunk
 
-
+# goes over each entry in the csv file
 for location in locations_dict:
 	location["city"] = ""
 	location["county"] = ""
@@ -152,33 +158,51 @@ for location in locations_dict:
 		# 		location["listofdates"].append(a)
 		# 	else:
 		# 		continue
+		
+		#creates a list of dates mentioned in each entry's "Date(s)[6620]" column, for storing all dates found in that column
 		listofdates = []
+		#finds dates in format of "200 to 127 BCE" or "635 BCE"
 		dates_result_BCE = re.findall(r"(\d+)-(\d+) BCE",sentence) + re.findall(r"(\d+)BCE",sentence)
+		#finds dates in format of "12th century" or "7th century"
 		dates_result_Century = re.findall(r"(\d+)th",sentence)
+		#finds dates in format of "1987-98"
 		dates_result_range = re.findall("\d{4}"+"-"+"\d{2}",sentence)
+		#finds dates in format of multiple digits, i.e. 103, 1926, etc.
 		dates_result_rest = re.findall(r"\d+",sentence)
+		
+		#for dates with BCE years:
 		if dates_result_BCE is not None:
 			for date in dates_result_BCE:
+				#in case of "200 to 127 BCE", which would lead to date in format of (200,127) tuple
 				if type(date) is tuple:
+					#converts each date to format of -200 and -127 (as numbers)
 					for d in date:
 						cd = int(d)
 						cd = cd*(-1)
 						listofdates.append(cd)
+				#in case of "635 BCE", which would lead to date in format of 635 (as number)
 				else:
+					#converts date to format of -635 (as number)
 					cd = int(date)
 					cd = cd*(-1)
 					listofdates.append(cd)
+		#for dates with centuries:
 		if dates_result_Century is not None:
 			for date in dates_result_Century:
+				#adds "00" after dates, for example, "19th" turns into "1900"
 				cd = date+ "00"
 				cd = int(cd)
 				listofdates.append(cd)
+		#for dates with ranges in format of "1987-98"
 		if dates_result_range is not None:
 			for date in dates_result_range:
 				if len(str(date)) ==4:
 					dates_result_range_century = str(date[:2])
+					cd = str(date[:2])
 				if len(str(date)) == 2:
 					cd = int(dates_result_range_century + str(date))
+				listofdates.append(cd)
+		#for dates in format of any consecutive multiple digits
 		if dates_result_rest is not None:
 			for date in dates_result_rest:
 				if (date not in dates_result_BCE) and (date not in dates_result_Century) and (date not in dates_result_range):
@@ -186,7 +210,8 @@ for location in locations_dict:
 					if cd >100:
 						listofdates.append(cd)
 		location["listofdates"] = listofdates
-
+		
+		#finds earliest date mentioned out of list of dates
 		if listofdates == []:
 			location["date_early"] = "earliest date not found"
 		else:
@@ -195,6 +220,7 @@ for location in locations_dict:
 	if location["parish"] is not "":
 		#lists parish as county if parish exists
 		location["county"] = location["parish"]
+	
 	listOfKeys = location.keys()
 
 	for category, worktypes in work_type_dict.items():
@@ -207,15 +233,17 @@ for location in locations_dict:
 				continue
 
 csv_columns = listOfKeys
-csv_file = "/Users/yichenli/Downloads/ARTHI/sahara-us-full-12-3.csv"
+#please replace with actual path to csv file(if the file does not already exist, it will be created)
+csv_file = "PATHTOOUTPUTCSV"
 with open(csv_file, "w") as csvfile:
 	writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
 	writer.writeheader()
 	for data in locations_dict:
 		writer.writerow(data)
 
-
+#dumps output as json
 j = json.dumps(locations_dict,indent=4)
-f =  open('/Users/yichenli/Downloads/ARTHI/sahara-us-full.json','w')
+#please replace with actual path to json file(if the file does not already exist, it will be created)
+f =  open('PATHTOOUTPUTJSON','w')
 print >> f, j
 f.close()
