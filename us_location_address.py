@@ -28,11 +28,11 @@ work_type_dict = {
 	'commercial':["pawnshops","Pawnshops","jewelers","Jewelers","car wash","Car wash","bank","Bank","commercial","Commercial","corporate headquarter","Corporate Headquarter","financial institution","inns","Inns","hotel","Hotel","motel","Motel","restaurant","Restaurant","shopping","Shopping","motion picture theater","store","Store","beauty shops","Beauty Shops","mercantile buildings","Mercantile Buildings","wholesalers","Wholesalers"],
 	'residential':["apartments","Apartments","condominiums","Condominiums","dwelling","Dwelling","residence","Residence","residential","Residential","rental housing","Rental Housing","houses","Houses","public housing","Public Housing","Housing","housing","mansions","Mansions"],
 	'infrastructure':["infrastructure","airport","Airport","Infrastructure","bridge","Bridge","dam","Dam","canal","Canal","highway","Highway","railroad","Railroad","wind turbines","Wind Turbines","freeways","transportation building","Transportation Building","Public works","Public Works","wharves","Wharves","wharf","Wharf","casinos","Casinos"],
-	'recreational':["golf","Golf","theater","Theater","resort","Resort","theme park","Theme park","Theme Park","amusement park","Amusement Park","Amusement park","recreation","Recreation"],
-	'research':["laboratories","Laboratories","research","Research","institute","Institute"],
-	'agricultural/industry':["agricultural","Agricultural","farms","Farms","flour mill","factories","Factories","industrial plants","Industrial Plants","smithies","Smithies","industrial buildings","Industrial Buildings"],
-	'funerary':["burial","Burial","cemeteries","Cemeteries","cemetry","Cemeteries","mausoleum","Mausoleum","graves","Graves","funerary buildings","Funerary Buildings","tomb","Tomb"],
-	'healthcare':["asylums","Asylums","hospitals","Hospitals","medical centers","Medical Centers","health facilities","Health Facilities","rehabilitation","Rehabilitation"]
+	#'recreational':["golf","Golf","theater","Theater","resort","Resort","theme park","Theme park","Theme Park","amusement park","Amusement Park","Amusement park","recreation","Recreation"],
+	#'research':["laboratories","Laboratories","research","Research","institute","Institute"],
+	#'agricultural/industry':["agricultural","Agricultural","farms","Farms","flour mill","factories","Factories","industrial plants","Industrial Plants","smithies","Smithies","industrial buildings","Industrial Buildings"],
+	#'funerary':["burial","Burial","cemeteries","Cemeteries","cemetry","Cemeteries","mausoleum","Mausoleum","graves","Graves","funerary buildings","Funerary Buildings","tomb","Tomb"],
+	#'healthcare':["asylums","Asylums","hospitals","Hospitals","medical centers","Medical Centers","health facilities","Health Facilities","rehabilitation","Rehabilitation"]
 	# "national parks", "street furniture", "public parks", "office buildings", "bungalows", "theme parks","distilleries"
 	}
 
