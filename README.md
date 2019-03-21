@@ -1,5 +1,5 @@
 # prerequisites:
-python libraries: json, csv, re, string
+python libraries: json, csv, re, string, lxml, beautifulsoup4, requests.
 # explanation of work types:
 the worktypes dictionary, starting from line 20, could be edited to more fitting categories, please follow the format of:
 'worktype':["example1","example2","example3",...],
