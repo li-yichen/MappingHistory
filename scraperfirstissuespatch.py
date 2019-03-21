@@ -12,7 +12,7 @@ i_soup = BeautifulSoup(i_response.text, "html.parser")
 
 #print(i_complete_link)
 
-#due to the chaos in html formatting among issues throughout the years, we go
+#due to the chaotic inconsistency in html formatting among different issues throughout the years, we go
 #through all the possible ways to find the article list
 if i_soup.find('li',{'class':"odd issue-toc-section issue-toc-section-articles"}):
 	article_section = i_soup.find('li',{'class':"odd issue-toc-section issue-toc-section-articles"})
