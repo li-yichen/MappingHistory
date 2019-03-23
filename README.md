@@ -57,4 +57,4 @@ winter 2019: Junqing, Yichen.
 
 ## acknowledgements:
 Dan Baciu, our instructor. Jon Jablonski, map librarian. Fabian Offert, part of WE1S team and instructor of ART185AI. Su Burtner, geography PhD student. Jackie Spafford, curator of Image Resource Center at Dept. of Art History. Mike Johnson, geography PhD student.
-we also owe our knowledge from Professor George Legrady, as well as his TA Rodger Luo who helped interpret the readme and package contents of Wikifier at the beginning.
+we also owe our knowledge from Professor George Legrady, as well as his TA Rodger Luo who kindly helped explain the readme and package contents of Wikifier at the beginning.
