@@ -57,4 +57,4 @@ winter 2019: Junqing, Yichen.
 
 ## acknowledgements:
 Dan Baciu, Jon Jablonski, Fabian Offert, Su Burtner, Jackie Spafford, Mike Johnson.
-we also owe our knowledge from: Professor Georges Legrady.
+we also owe our knowledge from Professor George Legrady.
