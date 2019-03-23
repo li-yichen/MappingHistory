@@ -1,4 +1,4 @@
-# python code
+## python code
 [1]scraper.py: scrapes JSAH journals.
 
 [2]scraperfirstissuespatch.py: scrapes first issues of JSAH journals, which are somehow left out by first file.
@@ -10,7 +10,7 @@
 [5]us_location_address-01-24.py: cleans up locations and classifies work types from the SAHARA .csv file provided by SAHARA.
 [5,previous version] us_location_address.py.
 
-# libraries and prerequisites:
+## libraries and prerequisites:
 *libraries required for (3) and (4), which read wikifier output, are italicised.*
 
 __*illinois wikifier*__ (3)(4)
@@ -43,14 +43,14 @@ came with python
 __csv__ (5)
 came with python
 
-# explanation of work types in us_location_address.py:
+## explanation of work types in us_location_address.py:
 
 the worktypes dictionary, starting from line 20, could be edited to more fitting categories, please follow the format of:
 'worktype':["example1","example2","example3",...],
 
-# future work:
+## future work:
 to topic model architectural materials, etc.
 
-# team:
+## team:
 fall 2018: Sophia G., Yichen L., Nathan S., Junqing S.
 winter 2019: Junqing, Yichen.
