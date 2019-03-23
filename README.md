@@ -7,7 +7,8 @@
 
 [4]xmlwikifinder_withgeo.py: same as above, with wikipedia coordinates added, also outputs json.
 
-[5]us_location_address.py: cleans up locations and classifies work types from the SAHARA .csv file provided by SAHARA.
+[5]us_location_address-01-24.py: cleans up locations and classifies work types from the SAHARA .csv file provided by SAHARA.
+[5,previous version] us_location_address.py.
 
 # libraries and prerequisites:
 *libraries required for (3) and (4), which read wikifier output, are italicised.*
