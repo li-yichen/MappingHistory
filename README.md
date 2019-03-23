@@ -56,4 +56,4 @@ fall 2018: Sophia G., Yichen L., Nathan S., Junqing S.
 winter 2019: Junqing, Yichen.
 
 ## acknowledgements:
-Dan Baciu, Jon Jablonski, Fabian Offert, Su Burtner, Mike Johnson.
+Dan Baciu, Jon Jablonski, Fabian Offert, Jackie Spafford, Su Burtner, Mike Johnson.
