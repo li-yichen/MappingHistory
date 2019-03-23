@@ -12,9 +12,11 @@
 # libraries and prerequisites:
 *libraries required for (3) and (4), which read wikifier output, are italicised.*
 
-__illinois wikifier__ (3)(4)
+__*illinois wikifier*__ (3)(4)
 
 download from: https://cogcomp.org/page/software_view/Wikifier
+
+how to run: follow the readme in downloaded folder.
 
 __requests__ (1)(2)
 
