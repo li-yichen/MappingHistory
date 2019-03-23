@@ -52,7 +52,7 @@ the worktypes dictionary, starting from line 20, could be edited to more fitting
 to topic model architectural materials, etc.
 
 ## team (students):
-fall 2018: Sophia G., Yichen L., Nathan S., Junqing S.
+fall 2018: Sophia G., Yichen L., Nathan S., Junqing S.</br>
 winter 2019: Junqing, Yichen.
 
 ## acknowledgements:
