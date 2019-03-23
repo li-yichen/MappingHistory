@@ -51,6 +51,9 @@ the worktypes dictionary, starting from line 20, could be edited to more fitting
 ## future work:
 to topic model architectural materials, etc.
 
-## team:
+## team (students):
 fall 2018: Sophia G., Yichen L., Nathan S., Junqing S.
 winter 2019: Junqing, Yichen.
+
+## acknowledgements:
+Dan Baciu, Jon Jablonski, Fabian Offert, Su Burtner, Mike Johnson.
