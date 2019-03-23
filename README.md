@@ -50,3 +50,7 @@ the worktypes dictionary, starting from line 20, could be edited to more fitting
 
 # future work:
 to topic model architectural materials, etc.
+
+# team:
+fall 2018: Sophia G., Yichen L., Nathan S., Junqing S.
+winter 2019: Junqing, Yichen.
