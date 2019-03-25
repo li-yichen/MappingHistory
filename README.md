@@ -1,10 +1,10 @@
 ## python code
-[1]scraper.py: scrapes JSAH journals.</br>
-[2]scraperfirstissuespatch.py: scrapes first issues of JSAH journals, which are somehow left out by first file.</br>
-[3]xmlwikifinder.py: scrapes output of wikifier in xml format, outputs json.</br>
-[4]xmlwikifinder_withgeo.py: same as above, with wikipedia coordinates added, also outputs json.</br>
-[5]us_location_address-01-24.py: cleans up locations and classifies work types from the SAHARA .csv file provided by SAHARA.</br>
-[5,previous version] us_location_address.py.</br>
+[1]scraper.py: scrapes JSAH journals.</br></br>
+[2]scraperfirstissuespatch.py: scrapes first issues of JSAH journals, which are somehow left out by first file.</br></br>
+[3]xmlwikifinder.py: scrapes output of wikifier in xml format, outputs json.</br></br>
+[4]xmlwikifinder_withgeo.py: same as above, with wikipedia coordinates added, also outputs json.</br></br>
+[5]us_location_address-01-24.py: cleans up locations and classifies work types from the SAHARA .csv file provided by SAHARA.</br></br>
+[5,previous version] us_location_address.py.</br></br>
 
 ## libraries and prerequisites:
 *libraries required for (3) and (4), which read wikifier output, are italicised.*</br></br>
