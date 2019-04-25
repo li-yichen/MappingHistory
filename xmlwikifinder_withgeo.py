@@ -16,6 +16,9 @@ from os.path import isfile, join
 #sets up a variable that is the path to the current directory, so file can be moved among different computers.
 script_dir = os.path.dirname(__file__)
 
+#on linux computers, the above line needs to be changed to:
+# script_dir = os.getcwd()
+
 #data should be stored within "Data" folder within current directory, "files" is all files in that folder.
 files = [f for f in listdir(script_dir+"/Data/") if isfile(join(script_dir+"/Data/", f))]
 
