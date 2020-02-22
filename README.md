@@ -43,8 +43,9 @@ to topic model architectural materials, etc.</br>
 ## team (instructor):
 Dr. Dan Baciu
 ## team (students):
-fall 2018: Sophia G., Yichen L., Nathan S., Junqing S.</br>
-winter 2019: Junqing, Yichen.
-spring 2019: Junqing, Yichen, Cindy Kang(MS student at MAT).
+fall 2018: Sophia G., Yichen L., Nathan S., Junqing S. | seminar project of mapping the image collection of the SAH, with ArcGIS and sort-of processed data. </br>
+winter 2019: Junqing, Yichen. | started mapping the journal papers too </br>
+spring 2019: Junqing, Yichen, Cindy Kang(MS student at MAT). | mapping the journal papers with tools other than ArcGIS</br>
+after spring 2019: Yichen is not part of team and doesn't know the current status of this project.
 ## acknowledgements:
 Dr. Dan Baciu, our instructor. Jon Jablonski, map librarian. Fabian Offert, part of WE1S team and instructor of ART185AI. Su Burtner, geography PhD student. Jackie Spafford, curator of Image Resource Center at Dept. of Art History. Mike Johnson, geography PhD student. The WE1S project. We also owe our knowledge from Rodger Luo, TA of MAT259A, who kindly helped explain the readme and package contents of Wikifier at the beginning.
